@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { results } from "./data/contacts.json";
+import Contact from "./components/Contact";
 function App() {
+  console.log(results);
   return (
     <div className="App">
-      <h1>Contact List</h1>
+      {results.map((contactInfo) => {
+        return <Contact {...contactInfo} />;
+      })}
     </div>
   );
 }
